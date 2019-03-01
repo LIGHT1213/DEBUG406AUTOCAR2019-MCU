@@ -11,7 +11,7 @@
 const static uint32_t _timerClockAPB1 = 84000000;
 const static uint32_t _timerClockSet  = 84000000;
 const static int32_t _autoReload = 4200 - 1;
-const static int _motorPolarity[2] = {1/*Left*/, 1/*Right*/};
+//const static int _motorPolarity[2] = {1/*Left*/, 1/*Right*/};
 
 static int32_t _motorSpeed[2] = {0/*Left*/, 0/*Right*/};
 
