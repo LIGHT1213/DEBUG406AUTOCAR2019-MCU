@@ -28,8 +28,8 @@ int main(void)
   SysTickDelay(1000);
   printf(" Hello World!");
   
- //SetMotorDutyRatio(0.5, 0.5);
- //SetMotorForwardTime(10000);
+ SetMotorDutyRatio(0.5, 0.5);
+ SetMotorForwardTime(10000);
 
   /* Infinite loop *******************************************************/
   while (TRUE)
@@ -76,6 +76,8 @@ int /*Test*/ main(void)
   {
     Motor_EncoderFeedback_Test();
     SysTickDelay(1000);
+		
+		while(1);
   }
 }
 
@@ -96,18 +98,18 @@ void Motor_EncoderFeedback_Test(void)
   {
     SetMotorDutyRatio(duty, duty);
     SysTickDelay(1000);
-    //timerCount[0] = GetLRSpeed(2);
-    //timerCount[1] = GetRFSpeed(2);
-    //printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
+    timerCount[0] = GetLRSpeed(2);
+    timerCount[1] = GetRFSpeed(2);
+    printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
   }
   
   for(; duty > 0; duty -= 0.1)
   {
     SetMotorDutyRatio(duty, duty);
     SysTickDelay(1000);
-    //timerCount[0] = GetLRSpeed(2);
-    //timerCount[1] = GetRFSpeed(2);
-    //printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
+    timerCount[0] = GetLRSpeed(2);
+    timerCount[1] = GetRFSpeed(2);
+    printf("%f,%f,\r\n", 1.0*timerCount[0]/500000, 1.0*timerCount[1]/500000);
   }
 }
 
